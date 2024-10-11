@@ -1,0 +1,207 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display',serif;
+    background-color: #ffffff; /* Blanco como fondo general */
+    color: #000000; /* Texto en negro */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #f8f4f4; /* Tono rojo para los títulos */
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+/* Header Styles con imagen de fondo */
+header {
+    background-image: url('../images/teatro.jpeg'); /* Ruta de la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el header */
+    background-position: center; /* Centra la imagen */
+    color: #ffffff; /* Texto en blanco para contrastar con la imagen */
+    padding: 60px;
+    text-align: center;
+    height: 300px; /* Puedes ajustar la altura según lo necesites */
+    position: relative; /* Necesario para el uso de la pseudo clase ::before */
+}
+
+.header-content {
+    display: flex; /* Usar flexbox para alinear los logos y el título */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    margin-bottom: 10px; /* Espacio entre el header y el nav */
+}
+
+.logo-left, .logo-right {
+    flex: 0 0 50px; /* Fija el tamaño del icono */
+    display: flex; /* Hacemos que el contenedor del logo sea flexible */
+    justify-content: center; /* Centra el icono horizontalmente */
+    font-size: 2rem; /* Tamaño del icono */
+    color: #fbfbfb; /* Color del icono en rojo teatral */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #f8f6f6; /* Título en rojo teatral */
+    margin: 0 20px; /* Espaciado entre el título y los logos */
+    position: relative;
+    z-index: 2; /* Asegura que el texto esté sobre la imagen */
+}
+
+header h3 {
+    margin: 10px 0; /* Espaciado entre el h3 y el header */
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* La capa queda detrás del texto */
+}
+
+nav {
+    margin-top: 20px; /* Espacio entre el header y el nav */
+    z-index: 3; /* Asegura que el nav esté sobre el pseudo-elemento */
+    position: relative; /* Necesario para que funcione el z-index */
+
+}
+
+nav ul {
+    list-style: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+    
+}
+
+nav li {
+    display: inline; /* Los elementos del menú en línea */
+    margin: 0 15px; /* Espacio entre los elementos del menú */
+    
+}
+
+nav a {
+    color: #ffffff; /* Color del texto del menú */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 1.2rem; /* Tamaño de fuente del menú */
+
+}
+
+
+/* Login Container */
+.login-container {
+    width: 350px;
+    margin: 50px auto;
+    padding: 30px;
+    border: 2px solid #b80000; /* Borde rojo */
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #b80000; /* Rojo teatral para títulos */
+    margin-bottom: 20px;
+}
+
+.login-container p {
+    text-align: center;  /* Centra el texto */
+    font-size: 0.9em;    /* Ajusta el tamaño del texto, puedes cambiar el valor si quieres más pequeño o grande */
+    margin-top: 0px;    /* Espacio extra entre el botón y el texto */
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input, form button {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #000000; /* Borde negro */
+}
+
+form input {
+    background-color: #f4f4f4; /* Ligero gris */
+    font-size: 1rem;
+    color: #000000;
+}
+
+form button {
+    background-color: #b80000; /* Botón en rojo teatro */
+    color: #ffffff; /* Texto en blanco */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #8e0000; /* Efecto hover más oscuro */
+}
+
+#registroLink {
+    color: #d32f2f; /* Rojo para hacer que resalte */
+    text-decoration: underline;
+}
+
+#registroLink:hover {
+    color: #ff5252; /* Color de hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #000000; /* Fondo negro */
+    color: #ffffff; /* Texto en blanco */
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+footer a {
+    color: #f4f2f2; /* Enlaces en rojo */
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #c81919; /* Efecto hover en blanco */
+}
+
+/* Input Styles */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #b80000; /* Borde rojo */
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Fondo gris claro */
+    font-size: 1rem;
+    color: #000000; /* Texto negro */
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #8e0000; /* Borde rojo más oscuro al enfocarse */
+    outline: none; /* Elimina el borde azul predeterminado */
+}
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/eb4274a717.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Iniciar Sesión</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-left">
+                <i class="fa-solid fa-masks-theater"></i>
+            </div>
+            <h1>Teatro Colonial</h1>
+            <div class="logo-right">
+                <i class="fa-solid fa-masks-theater"></i>
+            </div>
+        </div>
+        <h3>¡Vení a disfrutar de los mejores shows!</h3>
+        
+        <nav>
+            <ul>
+                <li><a href="/inicio.html" target="_blank">Inicio</a></li>
+                <li><a href="/funciones.html" target="_blank">Funciones</a></li>
+                <li><a href="/contacto.html" target="_blank">Contacto</a></li>
+            </ul>
+        </nav>
+        
+
+
+    </header>
+    
+    <div class="login-container">
+        <h2> Iniciar Sesión</h2>
+        <form id="loginForm">
+            <label for="Username">Usuario</label>
+            <input type="text" id="Username" placeholder="Escriba su usuario" required minlength="5">
+
+            <label for="Password"> Contraseña</label>
+            <input type="password" id="Password" placeholder="Escriba su contraseña" required>
+
+            <button type="submit" id="Boton"> Ingresar</button>
+            <p id="errorMessage" class="error"></p>
+
+            <!-- Enlace para registrarse -->
+            <p>No tenés una cuenta? <a href="registro.html" id="registroLink">Registrate</a></p>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>Gracias por visitarnos. ¡Esperamos verte pronto en el Teatro Colonial!</p>
+            <p><a href="mailto:info@teatrocolonial.com">Contáctanos</a> | Tel: +54 11 1234 5678</p>
+        
+            <nav>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/login.js"></script>
+</body>
+</html>
