@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrada Confirmada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/eb4274a717.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-left">
+                <i class="fa-solid fa-masks-theater"></i>
+            </div>
+            <h1>Teatro Colonial</h1>
+            <div class="logo-right">
+                <i class="fa-solid fa-masks-theater"></i>
+            </div>
+        </div>
+        <h3>¡Vení a disfrutar de los mejores musicales!</h3>
+        
+        <nav>
+            <ul>
+                <li><a href="inicio.html" target="_blank">Inicio</a></li>
+                <li><a href="funciones.html" target="_blank">Funciones</a></li>
+                <li><a href="contacto.html" target="_blank">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="entrada-confirmada">
+        <h2>¡Compra Confirmada!</h2>
+        <p>Gracias por tu compra. Aquí están los detalles de tu entrada:</p>
+        <div id="ticket-details">
+            <p><strong>Asiento Seleccionado:</strong> <span id="seat"></span></p>
+            <p><strong>Monto Abonado:</strong> $<span id="amount"></span></p>
+            <p><strong>Método de Pago:</strong> <span id="method"></span></p>
+            <p><strong>Fecha de la Función:</strong> <span id="date"></span></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Teatro Colonial © 2024. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="scripts/entrada.js"></script>
+</body>
+</html>

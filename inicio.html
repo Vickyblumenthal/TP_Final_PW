@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/eb4274a717.js" crossorigin="anonymous"></script>
+    
+    <!-- Enlace a los estilos de Slick Carousel -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+<!-- Enlace a la librería de jQuery (si no la tienes ya incluida) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Enlace a los scripts de Slick Carousel -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Página de Inicio</title>
+</head>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.musicales').slick({
+            slidesToShow: 3,  // Muestra tres musicales a la vez
+            slidesToScroll: 1, // Desplaza uno a la vez
+            autoplay: true,    // Desplazamiento automático
+            autoplaySpeed: 3000,  // Velocidad de desplazamiento
+            prevArrow: '<button type="button" class="slick-prev">‹</button>',
+            nextArrow: '<button type="button" class="slick-next">›</button>',
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+    });
+</script>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-left">
+                <i class="fa-solid fa-masks-theater"></i>
+            </div>
+            <h1>Teatro Colonial</h1>
+            <div class="logo-right">
+                <i class="fa-solid fa-masks-theater"></i>
+            </div>
+        </div>
+        <h3>¡Vení a disfrutar de los mejores musicales!</h3>
+        
+        <nav>
+            <ul>
+                <li><a href="login.html" target="_blank">Iniciar Sesión</a></li>
+                <li><a href="funciones.html" target="_blank">Funciones</a></li>
+                <li><a href="contacto.html" target="_blank">Contacto</a></li>
+            </ul>
+        </nav>
+    
+    </header>
+    <section class="musicales-carousel">
+        <div class="musicales">
+            <div class="musical">
+                <img src="images/mamma mia.jpeg" alt="Mamma Mia">
+                <h3>Mamma Mia</h3>
+                <button class="add-to-cart" data-name="Mamma Mia" onclick="window.open('funciones.html', '_blank');">Seleccionar Función</button>
+            </div>
+            <div class="musical">
+                <img src="images/rock of ages.jpeg" alt="Rock of Ages">
+                <h3>Rock of Ages</h3>
+                <button class="add-to-cart"  data-name="Rock of Ages" onclick="window.open('funciones.html', '_blank');">Seleccionar Función</button>
+            </div>
+            <div class="musical">
+                <img src="images/legalmente rubia.webp" alt="Legalmente Rubia">
+                <h3>Legalmente Rubia</h3>
+                <button class="add-to-cart" data-name="Legalmente Rubia" onclick="window.open('funciones.html', '_blank');">Seleccionar Función</button>
+            </div>
+            <div class="musical">
+                <img src="images/hadestown.jpeg" alt="Hadestown">
+                <h3>Hadestown</h3>
+                <button class="add-to-cart" data-name="Hadestown" onclick="window.open('funciones.html', '_blank');">Seleccionar Función</button>
+            </div>
+            <div class="musical">
+                <img src="images/matilda.jpeg" alt="Matilda">
+                <h3>Matilda</h3>
+                <button class="add-to-cart" data-name="Matilda" onclick="window.open('funciones.html', '_blank');">Seleccionar Función</button>
+            </div>
+            <div class="musical">
+                <img src="images/moulin rouge.jpeg" alt="Moulin Rouge">
+                <h3>Moulin Rouge</h3>
+                <button class="add-to-cart" data-name="Moulin Rouge" onclick="window.open('funciones.html', '_blank');">Seleccionar Función</button>
+            </div>
+            <div class="musical">
+                <img src="images/beetlejuice.jpeg" alt="Beetlejuice">
+                <h3>Beetlejuice</h3>
+                <button class="add-to-cart" data-name="Beetlejuice" onclick="window.open('funciones.html', '_blank');">Seleccionar Función</button>
+            </div>
+            <div class="musical">
+                <img src="images/come from away.jpeg" alt="Come From Away">
+                <h3>Come From Away</h3>
+                <button class="add-to-cart" data-name="Come From Away" onclick="window.open('funciones.html', '_blank');">Seleccionar Función</button>
+            </div>
+            <div class="musical">
+                <img src="images/avenida Q.jpeg" alt="Avenida Q">
+                <h3>Avenida Q</h3>
+                <button class="add-to-cart" data-name="Avenida Q" onclick="window.open('funciones.html', '_blank');">Seleccionar Función</button>
+            </div>
+            <div class="musical">
+                <img src="images/rotten.jpeg" alt="Rotten">
+                <h3>Rotten</h3>
+                <button class="add-to-cart" data-name="Rotten" onclick="window.open('funciones.html', '_blank');">Seleccionar Función</button>
+            </div>
+            <div class="musical">
+                <img src="images/wicked.jpeg" alt="Wicked">
+                <h3>Wicked</h3>
+                <button class="add-to-cart" data-name="Wicked" onclick="window.open('funciones.html', '_blank');">Seleccionar Función</button>
+            </div>
+            <div class="musical">
+                <img src="images/american idiot.jpeg" alt="American Idiot">
+                <h3>American Idiot</h3>
+                <button class="add-to-cart" data-name="American Idiot" onclick="window.open('funciones.html', '_blank');">Seleccionar Función</button>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <p>Gracias por visitarnos. ¡Esperamos verte pronto en el Teatro Colonial!</p>
+            <p><a href="mailto:info@teatrocolonial.com">Contáctanos</a> | Tel: +54 11 1234 5678</p>
+        
+            <nav>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/eb4274a717.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Selección de Asientos</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-left">
+                <i class="fa-solid fa-masks-theater"></i>
+            </div>
+            <h1>Selección de Asientos</h1>
+            <div class="logo-right">
+                <i class="fa-solid fa-masks-theater"></i>
+            </div>
+        </div>
+        <h3>¡Elegí los asientos deseados para tu función!</h3>
+        
+        <nav>
+            <ul>
+                <li><a href="inicio.html" target="_blank">Inicio</a></li>
+                <li><a href="funciones.html" target="_blank">Funciones</a></li>
+                <li><a href="contacto.html" target="_blank">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="seleccion-funcion">
+        <h2>Elegí la Función</h2>
+        <label for="funcion"></label>
+        <select id="funcion" name="funcion">
+            <option value="1">Función 1 - 14/11/2024 - 19:00 - Grupo A - 2 horas</option>
+            <option value="2">Función 2 - 15/11/2024 - 20:00 - Grupo B - 2 horas y 30 minutos</option>
+            <option value="3">Función 3 - 16/11/2024 - 18:00 - Grupo C - 1 hora y 45 minutos</option>
+        </select>
+    </section>
+
+    <main>
+        <h2 id="asiento-titulo"></h2>
+        <div class="seating-container">
+            <div id="escenario">Escenario</div>
+            <div class="seat-map" id="seatMap">
+                <div class="section platea" id="platea"></div>
+                <div class="section palco-bajo" id="palcoBajo"></div>
+                <div class="section palco-alto" id="palcoAlto"></div>
+                <div class="section cazuela" id="cazuela"></div>
+                <div class="section tertulia" id="tertulia"></div>
+                <div class="section paraiso" id="paraiso"></div>
+            </div>
+        </div>
+        <button id="confirm-seats">Confirmar Selección</button>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <p>Teatro Colonial © 2024. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script src="scripts/asientos.js"></script>
+</body>
+</html>

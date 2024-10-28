@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra de Tickets</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Teatro Colonial</h1>
+    </header>
+
+    <section class="purchase-section">
+        <h3>Elegí el método de pago</h3>
+        <select id="paymentMethod" required>
+            <option value="" disabled selected>Método de pago</option>
+            <option value="debito">Tarjeta de Débito</option>
+            <option value="efectivo">Efectivo (10% de descuento)</option>
+            <option value="credito">Tarjeta de Crédito</option>
+        </select>
+
+        <div id="creditOptions" style="display:none;">
+            <h3>Información de la Tarjeta</h3>
+            <label for="installments">Número de Cuotas:</label>
+            <select id="installments">
+                <option value="1">1 cuota</option>
+                <option value="2">2 cuotas (Recargo de 6%)</option>
+                <option value="3">3 cuotas (Recargo de 12%)</option>
+                <option value="6">6 cuotas (Recargo de 20%)</option>
+            </select>
+
+            <label for="cardNumber">Número de Tarjeta:</label>
+            <input type="text" id="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+
+            <label for="cardHolder">Nombre del Titular:</label>
+            <input type="text" id="cardHolder" required>
+
+            <label for="expiryDate">Fecha de Vencimiento:</label>
+            <input type="month" id="expiryDate" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" placeholder="XXX" required>
+        </div>
+
+        <div id="debitOptions" style="display:none;">
+            <h4>Detalles de la Tarjeta</h4>
+            <label for="debitCardNumber">Número de Tarjeta:</label>
+            <input type="text" id="debitCardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+
+            <label for="debitCardHolder">Nombre del Titular:</label>
+            <input type="text" id="debitCardHolder" required>
+
+            <label for="debitExpiryDate">Fecha de Vencimiento:</label>
+            <input type="month" id="debitExpiryDate" required>
+
+            <label for="debitCvv">CVV:</label>
+            <input type="text" id="debitCvv" placeholder="XXX" required>
+        </div>
+
+        <button id="finalizePurchase">Finalizar Compra</button>
+    </section>
+    <section class="purchase-summary">
+        <h3>Resumen de Compra</h3>
+        <p id="selectedSeatInfo"></p>
+        <p id="functionDateInfo"></p>
+        <p id="totalPriceInfo"></p>
+    </section>
+
+    <footer>
+        <p>Teatro Colonial © 2024. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="scripts/compra.js"></script>
+</body>
+</html>

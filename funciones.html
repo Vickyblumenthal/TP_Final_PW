@@ -4,55 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funciones</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/eb4274a717.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
     <header>
-        <h1>Funciones</h1>
-        <p></p>
+        <div class="header-content">
+            <div class="logo-left">
+                <i class="fa-solid fa-masks-theater"></i>
+            </div>
+            <h1>Funciones disponibles</h1>
+            <div class="logo-right">
+                <i class="fa-solid fa-masks-theater"></i>
+            </div>
+        </div>
+        <h3>¡Disfrtutá de los más destacados musicales!</h3>
+        
+        <nav>
+            <ul>
+                <li><a href="inicio.html" target="_blank">Inicio</a></li>
+                <li><a href="funciones.html" target="_blank">Funciones</a></li>
+                <li><a href="contacto.html" target="_blank">Contacto</a></li>
+            </ul>
+        </nav>
+        
     </header>
 
     <section class="musicales">
         <div class="musical">
             <img src="images/mamma mia.jpeg" alt="Mamma Mia">
-            <button>Añadir al carrito</button>
+            <h3> Mamma Mia</h3>
+            <button class="add-to-cart" data-name="Mamma Mia">Seleccionar Función</button>
         </div>
         <div class="musical">
             <img src="images/rock of ages.jpeg" alt="Rock of Ages">
-            <button>Añadir al carrito</button>
+            <h3> Rock of Ages</h3>
+            <button class="add-to-cart" data-name="Rock of Ages">Seleccionar Función</button>
         </div>
         <div class="musical">
             <img src="images/legalmente rubia.webp" alt="Legalmente Rubia">
-            <button>Añadir al carrito</button>
+            <h3> Legalmente Rubia</h3>
+            <button class="add-to-cart" data-name="Legalmente Rubia">Seleccionar Función</button>
         </div>
         <div class="musical">
             <img src="images/hadestown.jpeg" alt="Hadestown">
-            <button>Añadir al carrito</button>
+            <h3> Hadestown</h3>
+            <button class="add-to-cart" data-name="Hadestown">Seleccionar Función</button>
         </div>
         <div class="musical">
             <img src="images/matilda.jpeg" alt="Matilda">
-            <button>Añadir al carrito</button>
+            <h3> Matilda</h3>
+            <button class="add-to-cart" data-name="Matilda">Seleccionar Función</button>
         </div>
         <div class="musical">
             <img src="images/moulin rouge.jpeg" alt="Moulin Rouge">
-            <button>Añadir al carrito</button>
+            <h3> Moulin Rouge</h3>
+            <button class="add-to-cart" data-name="Moulin Rouge">Seleccionar Función</button>
         </div>
         <div class="musical">
             <img src="images/beetlejuice.jpeg" alt="Beetlejuice">
-            <button>Añadir al carrito</button>
+            <h3> Beetlejuice</h3>
+            <button class="add-to-cart" data-name="Beetlejuice">Seleccionar Función</button>
         </div>
         <div class="musical">
             <img src="images/come from away.jpeg" alt="Come From Away">
-            <button>Añadir al carrito</button>
+            <h3> Come From Away</h3>
+            <button class="add-to-cart" data-name="Come From Away">Seleccionar Función</button>
         </div>
         <div class="musical">
             <img src="images/avenida Q.jpeg" alt="Avenida Q">
-            <button>Añadir al carrito</button>
+            <h3> Avenida Q</h3>
+            <button class="add-to-cart" data-name="Avenida Q">Seleccionar Función</button>
+        </div>
+        <div class="musical">
+            <img src="images/rotten.jpeg" alt="Rotten">
+            <h3>Rotten</h3>
+            <button class="add-to-cart" data-name="Rotten">Seleccionar Función</button>
+        </div>
+        <div class="musical">
+            <img src="images/wicked.jpeg" alt="Wicked">
+            <h3>Wicked</h3>
+            <button class="add-to-cart" data-name="Wicked">Seleccionar Función</button>
+        </div>
+        <div class="musical">
+            <img src="images/american idiot.jpeg" alt="American Idiot">
+            <h3>American Idiot</h3>
+            <button class="add-to-cart" data-name="American Idiot">Seleccionar Función</button>
         </div>
     </section>
+
+    <div id="popup-cart" class="popup-cart hide">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h3>Función Seleccionada</h3>
+            <p id="selected-musical"></p> <!-- Aquí se mostrará el nombre del musical -->
+            <button id="proceed-seat-selection">Seleccionar Asientos</button>
+        </div>
+    </div>
+    
+
 
     <footer>
         <p>© 2024 Teatro Colonial. Todos los derechos reservados.</p>
     </footer>
+
+
+    <script src="scripts/app.js"></script>
 </body>
 </html>
