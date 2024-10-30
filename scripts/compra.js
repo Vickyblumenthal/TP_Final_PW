@@ -1,6 +1,13 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", async function() {
     const selectedSeat = JSON.parse(localStorage.getItem("selectedSeat"));
     const functionInfo = JSON.parse(localStorage.getItem("functionInfo"));
+    const currencySelector = document.getElementById("currencySelector");
+    const paymentMethodSelector = document.getElementById("paymentMethod");
+    const totalPriceInfo = document.getElementById("totalPriceInfo");
+    const creditOptions = document.getElementById("creditOptions");
+    const debitOptions = document.getElementById("debitOptions");
+    let precioEnPesos = selectedSeat ? selectedSeat.price : 0;
+    let precioFinal = precioEnPesos; // Inicializa el precio final
 
     if (!selectedSeat || !functionInfo) {
         alert("No se encontró información de la compra. Por favor, selecciona un asiento.");
@@ -10,24 +17,82 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Mostrar información de asiento y función
     document.getElementById("selectedSeatInfo").innerText = `Asiento Seleccionado: ${selectedSeat.seatNumber}`;
-    document.getElementById("functionDateInfo").innerText = `Función: ${functionInfo.name}`; // Sin fecha aquí
-    document.getElementById("totalPriceInfo").innerText = `Precio Total: $${selectedSeat.price}`;
+    document.getElementById("functionDateInfo").innerText = `Función: ${functionInfo.name}`;
+    totalPriceInfo.innerText = `Precio Total: $${precioEnPesos} ARS`;
 
-    document.getElementById("paymentMethod").addEventListener("change", function() {
-        const paymentMethod = this.value;
-        const creditOptions = document.getElementById("creditOptions");
-        const debitOptions = document.getElementById("debitOptions");
+    // Función para obtener el precio del dólar blue
+    async function obtenerPrecioDolarBlue() {
+        try {
+            const response = await fetch("https://dolarapi.com/v1/dolares/blue");
+            if (!response.ok) {
+                throw new Error("Error al obtener el precio del dólar blue. Intente de nuevo.");
+            }
+            const data = await response.json();
+            console.log("Precio del dólar blue:", data.venta); // Verificar respuesta de la API
+            return data.venta;
+        } catch (error) {
+            console.error(error.message);
+            alert(error.message);
+            return null;
+        }
+    }
+
+    // Cambia el precio cuando se selecciona la moneda
+    currencySelector.addEventListener("change", async function() {
+        actualizarPrecioTotal();
+    });
+
+    // Actualiza el precio total en función del método de pago seleccionado
+    paymentMethodSelector.addEventListener("change", function() {
+        actualizarPrecioTotal();
+        const paymentMethod = paymentMethodSelector.value;
 
         creditOptions.style.display = "none";
         debitOptions.style.display = "none";
 
-        if (paymentMethod === "credito") creditOptions.style.display = "block";
-        else if (paymentMethod === "debito") debitOptions.style.display = "block";
+        if (paymentMethod === "credito") {
+            creditOptions.style.display = "block";
+        } else if (paymentMethod === "debito") {
+            debitOptions.style.display = "block";
+        }
     });
 
-    document.getElementById("finalizePurchase").addEventListener("click", function() {
-        const paymentMethod = document.getElementById("paymentMethod").value;
+    // Función para actualizar el precio total
+    function actualizarPrecioTotal() {
+        const paymentMethod = paymentMethodSelector.value;
+        let precioCalculado = precioEnPesos;
 
+        if (paymentMethod === "credito") {
+            const cuotas = parseInt(document.getElementById("installments").value);
+            if (cuotas === 2) {
+                precioCalculado *= 1.06; // 6% de recargo
+            } else if (cuotas === 3) {
+                precioCalculado *= 1.12; // 12% de recargo
+            } else if (cuotas === 6) {
+                precioCalculado *= 1.20; // 20% de recargo
+            }
+        } else if (paymentMethod === "efectivo") { // Si se elige pagar en efectivo
+            precioCalculado *= 0.90; // Aplica 10% de descuento
+        }
+
+        // Actualiza el precio total en la interfaz
+        if (currencySelector.value === "dolares") {
+            obtenerPrecioDolarBlue().then(precioDolarBlue => {
+                if (precioDolarBlue) {
+                    const precioEnDolares = (precioCalculado / precioDolarBlue).toFixed(2);
+                    totalPriceInfo.innerText = `Precio Total: $${precioEnDolares} USD`;
+                }
+            });
+        } else {
+            totalPriceInfo.innerText = `Precio Total: $${precioCalculado.toFixed(2)} ARS`;
+        }
+    }
+
+    // Finalizar compra
+    document.getElementById("finalizePurchase").addEventListener("click", function() {
+        const paymentMethod = paymentMethodSelector.value;
+
+        // Validar campos según el método de pago seleccionado
         if (paymentMethod === "credito" && !validarCamposCredito()) {
             alert("Por favor, complete todos los campos de tarjeta de crédito.");
             return;
@@ -39,31 +104,19 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-        // Calcular el precio total para tarjeta de crédito
-        let precioFinal = selectedSeat.price;
-        if (paymentMethod === "credito") {
-            const cuotas = parseInt(document.getElementById("installments").value);
-            if (cuotas === 2) {
-                precioFinal *= 1.06; // 6% de recargo
-            } else if (cuotas === 3) {
-                precioFinal *= 1.12; // 12% de recargo
-            } else if (cuotas === 6) {
-                precioFinal *= 1.20; // 20% de recargo
-            }
-        }
-
         // Guardar detalles de la compra en localStorage
         const detalleCompra = {
             asiento: selectedSeat.seatNumber,
-            precio: precioFinal.toFixed(2), // Redondear a 2 decimales
-            funcion: functionInfo.name // Solo nombre de la función aquí
+            precio: precioFinal.toFixed(2),
+            funcion: functionInfo.name,
+            moneda: currencySelector.value // Agregar la moneda seleccionada
         };
 
         localStorage.setItem("detalleCompra", JSON.stringify(detalleCompra));
         localStorage.setItem("paymentMethod", paymentMethod);
 
         alert("Compra exitosa!");
-        window.location.href = "entrada.html"; // Redirigir a la página de entrada confirmada
+        window.location.href = "entrada.html";
     });
 
     function validarCamposCredito() {

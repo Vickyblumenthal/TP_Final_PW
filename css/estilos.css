@@ -150,6 +150,14 @@
         background-color: #c00707;
     }
 
+/* Muscial Titulo*/
+.carousel-title {
+    text-align: center; /* Centra el texto */
+    font-size: 2rem; /* Ajusta el tamaño de la fuente */
+    color: #ac1a1a; /* Color del texto (rojo teatral) */
+    margin: 20px 0; /* Espaciado arriba y abajo */
+    font-weight: bold; /* Negrita para destacar el título */
+}
 
     /*Flechas*/
     /* Ajustar posición de las flechas */
@@ -534,12 +542,12 @@
     }
     /* Colores de fondo por sección */
     .section.platea {
-        background-color: rgba(239, 152, 152, 0.8); /* Color de fondo para platea */
+        background-color: rgba(239, 152, 216, 0.8); /* Color de fondo para platea */
     }
-    .section.palco-bajo {
-        background-color: rgba(246, 88, 93, 0.8); /* Color de fondo para palco bajo */
+    .section.palcoBajo {
+        background-color: rgba(190, 98, 118, 0.8); /* Color de fondo para palco bajo */
     }
-    .section.palco-alto {
+    .section.palcoAlto {
         background-color: rgba(242, 46, 46, 0.8); /* Color de fondo para palco bajo */
     }
     .section.cazuela {
