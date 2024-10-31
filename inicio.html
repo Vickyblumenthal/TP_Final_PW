@@ -9,15 +9,14 @@
     <script src="https://kit.fontawesome.com/eb4274a717.js" crossorigin="anonymous"></script>
     
     <!-- Enlace a los estilos de Slick Carousel -->
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 
-<!-- Enlace a la librería de jQuery (si no la tienes ya incluida) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Enlace a la librería de jQuery (si no la tienes ya incluida) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!-- Enlace a los scripts de Slick Carousel -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
+    <!-- Enlace a los scripts de Slick Carousel -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <link rel="stylesheet" href="css/estilos.css">
     <title>Página de Inicio</title>
@@ -28,7 +27,7 @@
             slidesToShow: 3,  // Muestra tres musicales a la vez
             slidesToScroll: 1, // Desplaza uno a la vez
             autoplay: true,    // Desplazamiento automático
-            autoplaySpeed: 3000,  // Velocidad de desplazamiento
+            autoplaySpeed: 1500,  // Velocidad de desplazamiento
             prevArrow: '<button type="button" class="slick-prev">‹</button>',
             nextArrow: '<button type="button" class="slick-next">›</button>',
             responsive: [
@@ -77,6 +76,7 @@
                 <li><a href="login.html" target="_blank">Iniciar Sesión</a></li>
                 <li><a href="funciones.html" target="_blank">Funciones</a></li>
                 <li><a href="contacto.html" target="_blank">Contacto</a></li>
+                <li><a href="nosotros.html" target="_blank"> Nosotros</a></li>
             </ul>
         </nav>
     
@@ -94,7 +94,7 @@
             <div class="musical">
                 <img src="images/rock of ages.jpeg" alt="Rock of Ages">
                 <h3>Rock of Ages</h3>
-                <button class="add-to-cart"  data-name="Rock of Ages" onclick="window.open('funciones.html', '_blank');">Seleccionar Función</button>
+                <button class="add-to-cart" data-name="Rock of Ages" onclick="window.open('funciones.html', '_blank');">Seleccionar Función</button>
             </div>
             <div class="musical">
                 <img src="images/legalmente rubia.webp" alt="Legalmente Rubia">
@@ -148,6 +148,16 @@
             </div>
         </div>
     </section>
+
+    <section class="about-theater">
+        <div class="about-theater-box">
+            <h2>Sobre el Teatro Colonial</h2>
+            <p>El Teatro Colonial es un lugar donde la magia del teatro cobra vida. Nos dedicamos a ofrecer una experiencia inolvidable a todos nuestros visitantes, presentando los mejores musicales y obras de teatro. 
+            ¡Unite a nosotros para disfrutar de un espectáculo único en un ambiente cálido y acogedor!</p>
+            <a href="nosotros.html" class="btn-more">¡Quiero saber más del teatro!</a>
+        </div>
+    </section>
+    
     
     <footer>
         <div class="footer-content">
@@ -162,12 +172,12 @@
                 </ul>
             </nav>
             <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
     </footer>
-    <script src="scripts/login.js"></script>
+
 </body>
 </html>

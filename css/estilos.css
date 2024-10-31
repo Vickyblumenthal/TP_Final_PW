@@ -246,14 +246,6 @@
         background-color: #8e0000; /* Efecto hover más oscuro */
     }
 
-    #registroLink {
-        color: #d32f2f; /* Rojo para hacer que resalte */
-        text-decoration: underline;
-    }
-
-    #registroLink:hover {
-        color: #ff5252; /* Color de hover */
-    }
 
     /* Footer Styles */
     footer {
@@ -329,30 +321,43 @@
         font-size: 1em;
     }
 
-    .carrito {
-        background-color: #f9f9f9;
-        padding: 20px;
-        margin: 20px auto;
-        max-width: 600px;
-        border: 1px solid #ddd;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+/* Cuadro de Texto*/
+.about-theater {
+    text-align: center; /* Centra el texto dentro de la sección */
+}
 
-    .carrito h2 {
-        font-size: 1.5em;
-        color: #333;
-    }
+.about-theater-box {
+    border-radius: 15px; /* Bordes redondeados para el cuadro */
+    border: 1px solid #000; /* Borde del cuadro */
+    padding: 20px; /* Espaciado interno */
+    display: inline-block; /* Para que el contenedor no ocupe todo el ancho */
+    margin: 20px auto; /* Centra el cuadro en la sección */
+}
 
-    .carrito ul {
-        list-style: none;
-        padding: 0;
-    }
+.about-theater-box h2 {
+    color: #9e3b3b; /* Color rojo suave */
+}
 
-    .carrito li {
-        font-size: 1.2em;
-        margin: 10px 0;
-    }
+.button-container {
+    margin-top: 15px; /* Margen superior para separación */
+}
 
+.btn-more {
+    display: inline-block; /* Mostrar como bloque en línea */
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: rgb(233, 87, 87); /* Color de fondo */
+    color: #fff; /* Color del texto */
+    text-decoration: none; /* Quitar subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.btn-more:hover {
+    background-color: #c00; /* Color de fondo al pasar el mouse */
+}
+
+
+/* Seleccion de asientos*/
     #proceed-seat-selection {
         padding: 10px 20px;
         background-color: #d32f2f;
@@ -737,4 +742,60 @@
 
 .confirmar-button:hover {
     background-color: #b71c1c; /* Fondo rojo más oscuro al pasar el mouse */
+}
+
+
+/* Nostros*/
+/* Sobre Nosotros */
+.about-theater {
+    padding: 20px; /* Espaciado interno */
+    background-color: #f9f9f9; /* Fondo claro */
+    border-radius: 5px; /* Esquinas redondeadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    max-width: 600px; /* Ancho máximo */
+    margin: 20px auto; /* Centrar en la página con margen */
+    text-align: center; /* Centrar texto */
+}
+
+.about-theater h2, .about-theater h3 {
+    color: #c0392b; /* Color del texto */
+}
+
+.about-theater p {
+    font-size: 16px; /* Tamaño de fuente */
+    line-height: 1.6; /* Espaciado entre líneas */
+    margin-bottom: 20px; /* Espacio debajo del párrafo */
+}
+
+.info-about {
+    border-top: 2px solid #c0392b; /* Línea superior */
+    padding-top: 15px; /* Espacio en la parte superior */
+}
+
+.info-about ul {
+    list-style: none; /* Quitar viñetas */
+    padding: 0; /* Quitar padding */
+}
+
+.info-about li {
+    margin: 10px 0; /* Espaciado entre elementos de la lista */
+}
+
+.button-container {
+    margin-top: 20px; /* Espacio en la parte superior del botón */
+}
+
+.btn-more {
+    background-color: #c0392b; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Esquinas redondeadas */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s ease; /* Efecto de transición */
+}
+
+.btn-more:hover {
+    background-color: #a52c28; /* Color del botón al pasar el mouse */
 }

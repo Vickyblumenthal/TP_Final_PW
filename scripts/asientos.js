@@ -60,6 +60,15 @@ function generarAsientos(asientosOcupados) {
 document.getElementById('funcion').addEventListener('change', function() {
     const selectedFunction = this.value;
 
+    // Guardar la fecha en localstorage
+    const funciones = [
+        'Función 1 - 14/11/2024 - 19:00 - Grupo A',
+        'Función 2 - 15/11/2024 - 20:00 - Grupo B',
+        'Función 3 - 16/11/2024 - 18:00 - Grupo C',
+    ];
+    localStorage.setItem("selectedDate", JSON.stringify(funciones[selectedFunction-1]));
+
+
     // Hacer una solicitud al backend para obtener los asientos ocupados
     fetch(`http://localhost:3000/funciones/${selectedFunction}`)
         .then(response => response.json())
@@ -68,6 +77,7 @@ document.getElementById('funcion').addEventListener('change', function() {
                 alert(data.error);
             } else {
                 generarAsientos(data.asientosOcupados); // Usar los asientos ocupados del servidor
+
             }
         })
         .catch(error => {
